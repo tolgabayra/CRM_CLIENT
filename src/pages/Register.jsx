@@ -30,10 +30,23 @@ export default function Register() {
           <div className="p-5 bg-white md:flex-1">
             <h3 className="my-4 text-2xl font-semibold text-gray-700">Account Login</h3>
             <form action="#" className="flex flex-col space-y-5">
-              <div className="flex flex-col space-y-1">
-                <label for="email" className="text-sm font-semibold text-gray-500">Email address</label>
-                <Input placeholder='Basic usage' />
-              </div>
+            <div class="mb-1 md:flex md:justify-between">
+								<div class="mb-4 md:mr-2 md:mb-0">
+									<label class="block mb-2 text-sm font-bold text-gray-700" for="firstName">
+										First Name
+									</label>
+                  <Input placeholder='Basic usage' />
+
+								</div>
+								<div class="md:ml-2">
+									<label class="block mb-2 text-sm font-bold text-gray-700" for="lastName">
+										Last Name
+									</label>
+                                    <Input placeholder='Basic usage' />
+
+								
+								</div>
+							</div>
                 <div className="flex flex-col space-y-1">
                 <label for="email" className="text-sm font-semibold text-gray-500">Email address</label>
                 <Input placeholder='Basic usage' />

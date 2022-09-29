@@ -9,6 +9,7 @@ import Products from './pages/Products'
 import Notfound from "./pages/Page404"
 import Users from './pages/Users';
 import Home from './pages/Home';
+import ForgetPassword from './pages/ForgetPassword';
  
 
 
@@ -34,6 +35,10 @@ export default function Router(){
         {
             path: "register",
             element: <Register />
+        },
+        {
+            path: "forget_password",
+            element: <ForgetPassword />
         },
         {
             path: "/",
