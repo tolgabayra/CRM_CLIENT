@@ -1,11 +1,11 @@
 import React from 'react'
-import { InputGroup,Input, Button, InputRightElement} from "@chakra-ui/react"
+import { InputGroup, Input, Button, InputRightElement } from "@chakra-ui/react"
 export default function Register() {
   const [show, setShow] = React.useState(false)
   const handleClick = () => setShow(!show)
   return (
     <div>
-       <div className="flex items-center min-h-screen p-4 bg-gray-100 lg:justify-center">
+      <div className="flex items-center min-h-screen p-4 bg-gray-100 lg:justify-center">
         <div
           className="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md"
         >
@@ -30,28 +30,28 @@ export default function Register() {
           <div className="p-5 bg-white md:flex-1">
             <h3 className="my-4 text-2xl font-semibold text-gray-700">Account Login</h3>
             <form action="#" className="flex flex-col space-y-5">
-            <div class="mb-1 md:flex md:justify-between">
-								<div class="mb-4 md:mr-2 md:mb-0">
-									<label class="block mb-2 text-sm font-bold text-gray-700" for="firstName">
-										First Name
-									</label>
+              <div class="mb-1 md:flex md:justify-between">
+                <div class="mb-4 md:mr-2 md:mb-0">
+                  <label class="block mb-2 text-sm font-bold text-gray-700" for="firstName">
+                    First Name
+                  </label>
                   <Input placeholder='Basic usage' />
 
-								</div>
-								<div class="md:ml-2">
-									<label class="block mb-2 text-sm font-bold text-gray-700" for="lastName">
-										Last Name
-									</label>
-                                    <Input placeholder='Basic usage' />
+                </div>
+                <div class="md:ml-2">
+                  <label class="block mb-2 text-sm font-bold text-gray-700" for="lastName">
+                    Last Name
+                  </label>
+                  <Input placeholder='Basic usage' />
 
-								
-								</div>
-							</div>
-                <div className="flex flex-col space-y-1">
+
+                </div>
+              </div>
+              <div className="flex flex-col space-y-1">
                 <label for="email" className="text-sm font-semibold text-gray-500">Email address</label>
                 <Input placeholder='Basic usage' />
               </div>
-              
+
               <div className="flex flex-col space-y-1">
                 <div className="flex items-center justify-between">
                   <label for="password" className="text-sm font-semibold text-gray-500">Password</label>
@@ -86,7 +86,7 @@ export default function Register() {
                   Log in
                 </button>
               </div>
-          
+
             </form>
           </div>
         </div>

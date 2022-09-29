@@ -15,21 +15,26 @@ export default function CardLineChart() {
             "May",
             "June",
             "July",
+            "August",
+            "Septemb.",
+            "Octob.",
+            "Novemb.",
+            "Decemb."
           ],
           datasets: [
             {
               label: new Date().getFullYear(),
               backgroundColor: "#4c51bf",
               borderColor: "#4c51bf",
-              data: [65, 78, 66, 44, 56, 67, 75],
+              data: [65, 78, 66, 44, 56, 67, 75, 90, 47, 42, 41, 78],
               fill: false,
             },
             {
               label: new Date().getFullYear() - 1,
               fill: false,
-              backgroundColor: "#fff",
-              borderColor: "#fff",
-              data: [40, 68, 86, 74, 56, 60, 87],
+              backgroundColor: "#fffs",
+              borderColor: "#fffs",
+              data: [40, 68, 86, 74, 56, 60, 87, 80, 81,62, 78,65],
             },
           ],
         },
@@ -109,7 +114,7 @@ export default function CardLineChart() {
     }, []);
     return (
       <>
-        <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-blueGray-700">
+        <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded ">
           <div className="rounded-t mb-0 px-4 py-3 bg-transparent">
             <div className="flex flex-wrap items-center">
               <div className="relative w-full max-w-full flex-grow flex-1">
