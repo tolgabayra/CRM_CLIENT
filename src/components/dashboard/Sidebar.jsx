@@ -37,7 +37,7 @@ export default function Sidebar() {
                             D<span className="text-teal-600">.</span>
                         </h1>
                         <h1 className="hidden md:block font-bold text-sm md:text-xl text-center">
-                            Bayrak CRM<span className="text-teal-600">.</span>
+                            Bayrak Panel<span className="text-teal-600">.</span>
                         </h1>
                         <div id="profile" className="space-y-3">
                             <img

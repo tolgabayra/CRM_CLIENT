@@ -20,7 +20,9 @@ export default function Router(){
             children: [
                 {path: "products", element: <Products />},
                 {path: "users", element: <Users />},
-                {path: "home", element: <Home />}
+                {path: "home", element: <Home />},
+                
+
 
 
             ]
@@ -35,9 +37,8 @@ export default function Router(){
         },
         {
             path: "/",
-            element: <HomeLayout />,
             children: [
-                { path: '/', element: <Navigate to="/dashboard/app" /> },
+                { path: '/', element: <Navigate to="/dashboard/home" /> },
                 { path: '404', element: <Notfound /> },
                 { path: '*', element: <Navigate to="/404" /> },
             ]

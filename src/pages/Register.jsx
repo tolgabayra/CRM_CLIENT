@@ -1,230 +1,80 @@
 import React from 'react'
-
+import { InputGroup,Input, Button, InputRightElement} from "@chakra-ui/react"
 export default function Register() {
+  const [show, setShow] = React.useState(false)
+  const handleClick = () => setShow(!show)
   return (
     <div>
-      <div>
+       <div className="flex items-center min-h-screen p-4 bg-gray-100 lg:justify-center">
         <div
-          className="min-h-screen flex flex-col items-center justify-center bg-gray-100"
+          className="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md"
         >
           <div
-            className="
-          flex flex-col
-          bg-white
-          shadow-md
-          px-4
-          sm:px-8
-          md:px-12
-          lg:px-18
-          py-8
-          rounded-xl
-          w-50
-          max-w-md
-        "
+            className="p-4 py-6 text-white bg-blue-500 md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly"
           >
-            <div className="font-medium self-center text-xl sm:text-3xl text-gray-800">
-              Welcome Back
+            <div className="my-3 text-4xl font-bold tracking-wider text-center">
+              <a href="#">Bayrak Panel</a>
             </div>
-            <div className="mt-4 self-center text-xl sm:text-sm text-gray-800">
-              Enter your credentials to access your account
-            </div>
-
-            <div className="mt-10">
-              <div>
-                <div className="flex flex-col mb-5">
-                  <label
-                    for="email"
-                    className="mb-1 text-xs tracking-wide text-gray-600"
-                  >E-Mail Address:</label
-                  >
-                  <div className="relative">
-                    <div
-                      className="
-                    inline-flex
-                    items-center
-                    justify-center
-                    absolute
-                    left-0
-                    top-0
-                    h-full
-                    w-10
-                    text-gray-400
-                  "
-                    >
-                      <i className="fas fa-at text-blue-500"></i>
-                    </div>
-
-                    <input
-                      id="email"
-                      type="email"
-                      name="email"
-                      className="
-                    text-sm
-                    placeholder-gray-500
-                    pl-5
-                    pr-4
-                    rounded-xl
-                    border border-gray-400
-                    w-full
-                    py-2
-                    focus:outline-none focus:border-blue-400
-                  "
-                      placeholder="Enter your email"
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col mb-6">
-                  <label
-                    for="password"
-                    className="mb-1 text-xs sm:text-sm tracking-wide text-gray-600"
-                  >Password:</label
-                  >
-                  <div className="relative">
-                    <div
-                      className="
-                    inline-flex
-                    items-center
-                    justify-center
-                    absolute
-                    left-0
-                    top-0
-                    h-full
-                    w-10
-                    text-gray-400
-                  "
-                    >
-                      <span>
-                        <i className="fas fa-lock text-blue-500"></i>
-                      </span>
-                    </div>
-
-                    <input
-                      id="password"
-                      type="password"
-                      name="password"
-                      className="
-                    text-sm
-                    placeholder-gray-500
-                    pl-5
-                    pr-4
-                    rounded-xl
-                    border border-gray-400
-                    w-full
-                    py-2
-                    focus:outline-none focus:border-blue-400
-                  "
-                      placeholder="Enter your password"
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col mb-6">
-                  <label
-                    for="password"
-                    className="mb-1 text-xs sm:text-sm tracking-wide text-gray-600"
-                  >Password:</label
-                  >
-                  <div className="relative">
-                    <div
-                      className="
-                    inline-flex
-                    items-center
-                    justify-center
-                    absolute
-                    left-0
-                    top-0
-                    h-full
-                    w-10
-                    text-gray-400
-                  "
-                    >
-                      <span>
-                        <i className="fas fa-lock text-blue-500"></i>
-                      </span>
-                    </div>
-
-                    <input
-                      id="password"
-                      type="password"
-                      name="password"
-                      className="
-                    text-sm
-                    placeholder-gray-500
-                    pl-5
-                    pr-4
-                    rounded-xl
-                    border border-gray-400
-                    w-full
-                    py-2
-                    focus:outline-none focus:border-blue-400
-                  "
-                      placeholder="Enter your password"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex w-full">
-                  <button
-                    type="submit"
-                    className="
-                  flex
-                  mt-2
-                  items-center
-                  justify-center
-                  focus:outline-none
-                  text-white text-sm
-                  sm:text-base
-                  bg-blue-500
-                  hover:bg-blue-600
-                  rounded-xl
-                  py-2
-                  w-full
-                  transition
-                  duration-150
-                  ease-in
-                "
-                  >
-                    <span className="mr-2 uppercase">Sign In</span>
-                    <span>
-                      <svg
-                        className="h-6 w-6"
-                        fill="none"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
+            <p className="mt-6 font-normal text-center text-gray-300 md:mt-0">
+              With the power of K-WD, you can now focus only on functionaries for your digital products, while leaving the
+              UI design on us!
+            </p>
+            <p className="flex flex-col items-center justify-center mt-10 text-center">
+              <span>Don't have an account?</span>
+              <a href="#" className="underline">Get Started!</a>
+            </p>
+            <p className="mt-6 text-sm text-center text-gray-300">
+              Read our <a href="#" className="underline">terms</a> and <a href="#" className="underline">conditions</a>
+            </p>
           </div>
-          <div className="flex justify-center items-center mt-6">
-            <a
-              href="#"
-              target="_blank"
-              className="
-            inline-flex
-            items-center
-            text-gray-700
-            font-medium
-            text-xs text-center
-          "
-            >
-              <span className="ml-2"
-              >You don't have an account?
-                <a
-                  href="#"
-                  className="text-xs ml-2 text-blue-500 font-semibold"
-                >Register now</a
-                ></span
-              >
-            </a>
+          <div className="p-5 bg-white md:flex-1">
+            <h3 className="my-4 text-2xl font-semibold text-gray-700">Account Login</h3>
+            <form action="#" className="flex flex-col space-y-5">
+              <div className="flex flex-col space-y-1">
+                <label for="email" className="text-sm font-semibold text-gray-500">Email address</label>
+                <Input placeholder='Basic usage' />
+              </div>
+                <div className="flex flex-col space-y-1">
+                <label for="email" className="text-sm font-semibold text-gray-500">Email address</label>
+                <Input placeholder='Basic usage' />
+              </div>
+              
+              <div className="flex flex-col space-y-1">
+                <div className="flex items-center justify-between">
+                  <label for="password" className="text-sm font-semibold text-gray-500">Password</label>
+                  <a href="#" className="text-sm text-blue-600 hover:underline focus:text-blue-800">Forgot Password?</a>
+                </div>
+                <InputGroup size='md'>
+                  <Input
+                    pr='4.5rem'
+                    type={show ? 'text' : 'password'}
+                    placeholder='Enter password'
+                  />
+                  <InputRightElement width='4.5rem'>
+                    <Button h='1.75rem' size='sm' onClick={handleClick}>
+                      {show ? 'Hide' : 'Show'}
+                    </Button>
+                  </InputRightElement>
+                </InputGroup>
+              </div>
+              <div className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="remember"
+                  className="w-4 h-4 transition duration-300 rounded focus:ring-2 focus:ring-offset-0 focus:outline-none focus:ring-blue-200"
+                />
+                <label for="remember" className="text-sm font-semibold text-gray-500">Remember me</label>
+              </div>
+              <div>
+                <button
+                  type="submit"
+                  className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-blue-500 rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-blue-200 focus:ring-4"
+                >
+                  Log in
+                </button>
+              </div>
+          
+            </form>
           </div>
         </div>
       </div>
