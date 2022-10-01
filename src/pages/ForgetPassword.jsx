@@ -32,7 +32,7 @@ export default function ForgetPassword() {
                             <div className="flex flex-col space-y-1">
                                 <div className="flex justify-end">
                                     <Link to="/login"
-                                        className="text-sm text-blue-600 hover:underline focus:text-blue-800">Go to login page</Link>
+                                        className="text-sm text-blue-600 hover:underline focus:text-blue-800">Login page</Link>
                                 </div>
 
                             </div>

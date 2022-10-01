@@ -1,26 +1,64 @@
-import React from 'react'
-import { ToastContainer, toast } from 'react-toastify';
+import React, { useState } from 'react'
 import 'react-toastify/dist/ReactToastify.css';
 import { Input } from "@chakra-ui/react"
 import { InputGroup, InputRightElement, Button } from "@chakra-ui/react"
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { useToast } from '@chakra-ui/react'
+import { appAxios } from "../utils/appAxios"
+import { useDispatch } from 'react-redux';
+import { login } from '../features/authSlice';
+
+
+
 
 export default function Login() {
 
   const [show, setShow] = React.useState(false)
   const handleClick = () => setShow(!show)
+  const toast = useToast()
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
 
-  const notify = () => toast.success(' Wow so easy!', {
-    position: "top-right",
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-  });
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+
+  const submitLogin = () => {
+    appAxios.post("/api/v1/auth/login",{
+      email,
+      password
+    },{withCredentials: true})
+    .then((res) => {
+      toast({
+        title: 'Login is successfull.',
+        description: "You are redirected to the dashboard page",
+        status: 'success',
+        position: "top-right",
+        duration: 2000,
+        isClosable: true,
+      })
+      setTimeout(() => {
+        dispatch(login())
+        navigate("/dashboard/home")
+      }, 2000);
+
+      Navigate
+    })
+    .catch(err=>{
+      console.log(err);
+      toast({
+        title: 'Login Failed.',
+        description: "Check your email and password",
+        status: 'error',
+        position: "top-right",
+        duration: 2000,
+        isClosable: true,
+      })
+    })
+  }
 
   return (
     <div>
-      <ToastContainer autoClose={2000} />
       <div className="flex items-center min-h-screen p-4 bg-gray-100 lg:justify-center">
         <div
           className="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md"
@@ -32,34 +70,33 @@ export default function Login() {
               <a href="#">Bayrak Panel</a>
             </div>
             <p className="mt-6 font-normal text-center text-gray-300 md:mt-0">
-              With the power of K-WD, you can now focus only on functionaries for your digital products, while leaving the
-              UI design on us!
+             Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? 
             </p>
             <p className="flex flex-col items-center justify-center mt-10 text-center">
               <span>Don't have an account?</span>
-              <a href="#" className="underline">Get Started!</a>
+              
+              <Link to="/register" className="underline">Get Started!</Link>
             </p>
-            <p className="mt-6 text-sm text-center text-gray-300">
-              Read our <a href="#" className="underline">terms</a> and <a href="#" className="underline">conditions</a>
-            </p>
+           
           </div>
           <div className="p-5 bg-white md:flex-1">
             <h3 className="my-4 text-2xl font-semibold text-gray-700">Account Login</h3>
-            <form action="#" className="flex flex-col space-y-5">
+            <div className="flex flex-col space-y-5">
               <div className="flex flex-col space-y-1">
                 <label for="email" className="text-sm font-semibold text-gray-500">Email address</label>
-                <Input placeholder='Basic usage' />
+                <Input onChange={(e)=>setEmail(e.target.value)} placeholder='example@example.com' />
               </div>
               <div className="flex flex-col space-y-1">
                 <div className="flex items-center justify-between">
                   <label for="password" className="text-sm font-semibold text-gray-500">Password</label>
-                  <a href="#" className="text-sm text-blue-600 hover:underline focus:text-blue-800">Forgot Password?</a>
+                  <Link to="/forget_password" className="text-sm text-blue-600 hover:underline focus:text-blue-800">Forgot Password?</Link>
                 </div>
                 <InputGroup size='md'>
                   <Input
                     pr='4.5rem'
                     type={show ? 'text' : 'password'}
                     placeholder='Enter password'
+                    onChange={(e)=>setPassword(e.target.value)}
                   />
                   <InputRightElement width='4.5rem'>
                     <Button h='1.75rem' size='sm' onClick={handleClick}>
@@ -79,6 +116,7 @@ export default function Login() {
               <div>
                 <button
                   type="submit"
+                  onClick={submitLogin}
                   className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-blue-500 rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-blue-200 focus:ring-4"
                 >
                   Log in
@@ -125,7 +163,7 @@ export default function Login() {
                   </a>
                 </div>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>

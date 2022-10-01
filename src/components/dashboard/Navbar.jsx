@@ -2,8 +2,23 @@ import React from 'react'
 import { FaTimesCircle } from "react-icons/fa"
 import { Avatar, Button, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Portal } from "@chakra-ui/react"
 import { Link } from 'react-router-dom'
+import { appAxios } from '../../utils/appAxios'
+
+
+
 
 export default function Navbar() {
+
+    const logout = () => {
+      appAxios.post("/api/v1/auth/logout")
+      .then(() => {
+        
+      })
+      .catch(err=>{
+        
+      })
+    }
+
     return (
         <div>
             <header className="fixed right-0 top-0 left-60 bg-blue-50 py-3 px-8 h-16">

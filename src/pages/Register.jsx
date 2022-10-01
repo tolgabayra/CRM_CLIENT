@@ -1,8 +1,55 @@
-import React from 'react'
-import { InputGroup, Input, Button, InputRightElement } from "@chakra-ui/react"
+import React, { useState } from 'react'
+import { InputGroup, Input, Button, InputRightElement, useToast } from "@chakra-ui/react"
+import { Link, useNavigate } from 'react-router-dom'
+import { appAxios } from '../utils/appAxios'
+
+
 export default function Register() {
   const [show, setShow] = React.useState(false)
   const handleClick = () => setShow(!show)
+  const navigate = useNavigate()
+  const toast = useToast()
+
+
+  const [username, setUsername] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+
+  const submitRegister = () => {
+    appAxios.post("/api/v1/auth/register",{
+      username,
+      email,
+      password
+    },{withCredentials: true})
+    .then(() => {
+      toast({
+        title: 'Your account has been created.',
+        description: "You are redirected to the login page",
+        status: 'success',
+        position: "top-right",
+        duration: 2000,
+        isClosable: true,
+      })
+      setTimeout(() => {
+        navigate("/login")
+      }, 2000);
+    })
+    .catch(err=>{
+      toast({
+        title: 'We couldnt create your account',
+        description: "Check your informations",
+        status: 'error',
+        position: "top-right",
+        duration: 2000,
+        isClosable: true,
+      })
+    })
+  }
+
+
+
+
   return (
     <div>
       <div className="flex items-center min-h-screen p-4 bg-gray-100 lg:justify-center">
@@ -16,49 +63,37 @@ export default function Register() {
               <a href="#">Bayrak Panel</a>
             </div>
             <p className="mt-6 font-normal text-center text-gray-300 md:mt-0">
-              With the power of K-WD, you can now focus only on functionaries for your digital products, while leaving the
-              UI design on us!
+            Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? 
+
             </p>
             <p className="flex flex-col items-center justify-center mt-10 text-center">
-              <span>Don't have an account?</span>
-              <a href="#" className="underline">Get Started!</a>
+              <span>Already have an account?</span>
+              <Link to="/login" className="underline">Sign In</Link>
             </p>
-            <p className="mt-6 text-sm text-center text-gray-300">
-              Read our <a href="#" className="underline">terms</a> and <a href="#" className="underline">conditions</a>
-            </p>
+           
           </div>
           <div className="p-5 bg-white md:flex-1">
-            <h3 className="my-4 text-2xl font-semibold text-gray-700">Account Login</h3>
-            <form action="#" className="flex flex-col space-y-5">
-              <div class="mb-1 md:flex md:justify-between">
-                <div class="mb-4 md:mr-2 md:mb-0">
-                  <label class="block mb-2 text-sm font-bold text-gray-700" for="firstName">
-                    First Name
-                  </label>
-                  <Input placeholder='Basic usage' />
-
-                </div>
-                <div class="md:ml-2">
-                  <label class="block mb-2 text-sm font-bold text-gray-700" for="lastName">
-                    Last Name
-                  </label>
-                  <Input placeholder='Basic usage' />
-
-
-                </div>
+            <h3 className="my-4 text-2xl font-semibold text-gray-700">Create your account</h3>
+            <div className="flex flex-col space-y-5">
+              <div className="mb-1 md:flex md:justify-between">
+               
+              </div>
+              <div className="flex flex-col space-y-1">
+                <label for="username" className="text-sm font-semibold text-gray-500">Username</label>
+                <Input onChange={(e)=>setUsername(e.target.value)} placeholder='Username' />
               </div>
               <div className="flex flex-col space-y-1">
                 <label for="email" className="text-sm font-semibold text-gray-500">Email address</label>
-                <Input placeholder='Basic usage' />
+                <Input onChange={(e)=>setEmail(e.target.value)} placeholder='example@example.com' />
               </div>
 
               <div className="flex flex-col space-y-1">
                 <div className="flex items-center justify-between">
                   <label for="password" className="text-sm font-semibold text-gray-500">Password</label>
-                  <a href="#" className="text-sm text-blue-600 hover:underline focus:text-blue-800">Forgot Password?</a>
                 </div>
                 <InputGroup size='md'>
                   <Input
+                  onChange={(e)=>setPassword(e.target.value)}
                     pr='4.5rem'
                     type={show ? 'text' : 'password'}
                     placeholder='Enter password'
@@ -80,14 +115,15 @@ export default function Register() {
               </div>
               <div>
                 <button
+                  onClick={submitRegister}
                   type="submit"
                   className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-blue-500 rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-blue-200 focus:ring-4"
                 >
-                  Log in
+                  Register
                 </button>
               </div>
 
-            </form>
+            </div>
           </div>
         </div>
       </div>

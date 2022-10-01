@@ -1,4 +1,5 @@
 import { Navigate, useRoutes } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 //layouts
 import DashboardLayout from "./layouts/dashboard/index"
@@ -11,13 +12,20 @@ import Users from './pages/Users';
 import Home from './pages/Home';
 import ForgetPassword from './pages/ForgetPassword';
  
+const ProtectedRoute = () => {
+  const user = useSelector((state)=> state.auth.user)
+  if(!user){
+    return <Login />
+  }
+  return <DashboardLayout />
+}
 
 
 export default function Router(){
     return useRoutes([
         {
             path: "/dashboard",
-            element: <DashboardLayout />,
+            element: <ProtectedRoute />,
             children: [
                 {path: "products", element: <Products />},
                 {path: "users", element: <Users />},
@@ -45,7 +53,7 @@ export default function Router(){
             children: [
                 { path: '/', element: <Navigate to="/dashboard/home" /> },
                 { path: '404', element: <Notfound /> },
-                { path: '*', element: <Navigate to="/404" /> },
+                { path: '*', element: <Notfound /> },
             ]
         },
         {
