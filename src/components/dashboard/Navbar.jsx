@@ -1,21 +1,35 @@
 import React from 'react'
 import { FaTimesCircle } from "react-icons/fa"
-import { Avatar, Button, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Portal } from "@chakra-ui/react"
-import { Link } from 'react-router-dom'
+import { Avatar, Button, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Portal, useToast } from "@chakra-ui/react"
+import { Link, useNavigate } from 'react-router-dom'
 import { appAxios } from '../../utils/appAxios'
 
 
 
 
 export default function Navbar() {
+    const toast = useToast()
+    const navigate = useNavigate()
 
     const logout = () => {
       appAxios.post("/api/v1/auth/logout")
       .then(() => {
-        
+        localStorage.clear()
+        toast({
+            title: 'Logout is successfull.',
+            description: "You are redirected to the login page",
+            status: 'success',
+            position: "top-right",
+            duration: 2000,
+            isClosable: true,
+          })
+          setTimeout(() => {
+            navigate("/login")
+            window.location.reload()
+          }, 2000);
       })
       .catch(err=>{
-        
+        console.log(err);
       })
     }
 
@@ -47,7 +61,7 @@ export default function Navbar() {
 
                                         </PopoverBody>
                                         <PopoverFooter>
-                                            <Link className='text-red-600 hover:text-red-500' to="/login">Logout</Link>
+                                            <Link className='text-red-600 hover:text-red-500' onClick={logout}>Logout</Link>
                                         </PopoverFooter>
                                     </PopoverContent>
                                 </Portal>

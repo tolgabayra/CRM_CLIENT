@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import 'react-toastify/dist/ReactToastify.css';
-import { Input } from "@chakra-ui/react"
+import { Input, Spinner } from "@chakra-ui/react"
 import { InputGroup, InputRightElement, Button } from "@chakra-ui/react"
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useToast } from '@chakra-ui/react'
@@ -29,6 +29,7 @@ export default function Login() {
       password
     },{withCredentials: true})
     .then((res) => {
+      console.log(res);
       toast({
         title: 'Login is successfull.',
         description: "You are redirected to the dashboard page",
@@ -41,6 +42,8 @@ export default function Login() {
         dispatch(login())
         navigate("/dashboard/home")
       }, 2000);
+      localStorage.setItem("username", res.data.username)
+      localStorage.setItem("_id", res.data._id)
 
       Navigate
     })
@@ -59,6 +62,7 @@ export default function Login() {
 
   return (
     <div>
+
       <div className="flex items-center min-h-screen p-4 bg-gray-100 lg:justify-center">
         <div
           className="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md"
