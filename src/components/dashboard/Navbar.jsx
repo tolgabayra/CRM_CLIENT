@@ -35,7 +35,7 @@ export default function Navbar() {
 
     return (
         <div>
-            <header className="fixed right-0 top-0 left-60 bg-blue-50 py-3 px-8 h-16">
+            <header className="fixed right-0 top-0 left-60 bg-gray-50 py-3 px-8 h-16">
                 <nav className=" flex flex-col lg:flex-row lg:items-center flex-shrink-0">
                     <div className="flex justify-between items-center lg:mr-32">
                         <span className="text-dark text-xl"></span>
@@ -57,11 +57,11 @@ export default function Navbar() {
                                         <PopoverArrow />
                                         <PopoverCloseButton />
                                         <PopoverBody>
-                                            <Link className='text-indigo-600 hover:text-indigo-500' to="/dashbaord/settings">Settings</Link>
+                                            <Link className='text-orange-600 hover:text-orange-500' to="/dashbaord/settings">Ayarlar</Link>
 
                                         </PopoverBody>
                                         <PopoverFooter>
-                                            <Link className='text-red-600 hover:text-red-500' onClick={logout}>Logout</Link>
+                                            <Link className='text-red-600 hover:text-red-500' onClick={logout}>Çıkış Yap</Link>
                                         </PopoverFooter>
                                     </PopoverContent>
                                 </Portal>

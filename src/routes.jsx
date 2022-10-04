@@ -6,11 +6,13 @@ import DashboardLayout from "./layouts/dashboard/index"
 import HomeLayout from "./layouts/home/index"
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Products from './pages/Products'
+import Products from './pages/Recipes'
 import Notfound from "./pages/Page404"
 import Users from './pages/Users';
 import Home from './pages/Home';
 import ForgetPassword from './pages/ForgetPassword';
+import Landing from './pages/Landing';
+import Recipes from './pages/Recipes';
  
 const ProtectedRoute = () => {
   const user = useSelector((state)=> state.auth.user)
@@ -27,7 +29,7 @@ export default function Router(){
             path: "/dashboard",
             element: <ProtectedRoute />,
             children: [
-                {path: "products", element: <Products />},
+                {path: "recipes", element: <Recipes />},
                 {path: "users", element: <Users />},
                 {path: "home", element: <Home />},
                 
@@ -51,7 +53,7 @@ export default function Router(){
         {
             path: "/",
             children: [
-                { path: '/', element: <Navigate to="/dashboard/home" /> },
+                { path: '/', element: <Landing /> },
                 { path: '404', element: <Notfound /> },
                 { path: '*', element: <Notfound /> },
             ]

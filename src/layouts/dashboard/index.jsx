@@ -17,7 +17,7 @@ export default function Index() {
     <main className="ml-60 pt-6 max-h-screen overflow-auto">
       <div className="px-6 py-8">
         <div className="w-full mx-auto">
-          <div className="bg-white rounded-3xl p-8 mb-5">
+          <div className="bg-white rounded-3xl p-1 mb-5">
             
   
         

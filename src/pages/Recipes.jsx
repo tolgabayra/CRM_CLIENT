@@ -22,7 +22,7 @@ import {
   TableCaption,
   TableContainer,
 } from '@chakra-ui/react'
-export default function Products() {
+export default function Recipes() {
 
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (

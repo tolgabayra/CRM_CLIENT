@@ -2,8 +2,9 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import { FaUsers } from "react-icons/fa";
 import { FaShoppingBasket } from "react-icons/fa"
-import { FaClipboard } from "react-icons/fa"
+import { FaTimes } from "react-icons/fa"
 import { FaCog } from "react-icons/fa"
+import { FaBook } from "react-icons/fa"
 
 export default function Sidebar() {
     return (
@@ -12,7 +13,7 @@ export default function Sidebar() {
                 className=""
             >
                 <button
-                    className="p-2 border-2 bg-white rounded-md border-gray-200 shadow-lg text-gray-500 focus:bg-teal-500 focus:outline-none focus:text-white absolute top-0 left-0 sm:hidden"
+                    className="p-2 border-2 bg-white rounded-md border-gray-200 shadow-lg text-gray-500 focus:bg-orange-500 focus:outline-none focus:text-white absolute top-0 left-0 sm:hidden"
                 >
                     <svg
                         className="w-5 h-5 fill-current"
@@ -28,10 +29,10 @@ export default function Sidebar() {
                 >
                     <div className="space-y-6 md:space-y-10 mt-10">
                         <h1 className="font-bold text-4xl text-center md:hidden">
-                            D<span className="text-teal-600">.</span>
+                            D<span className="text-orange-600">.</span>
                         </h1>
                         <h1 className="hidden md:block font-bold text-sm md:text-xl text-center">
-                            Bayrak Panel<span className="text-teal-600">.</span>
+                            Fit Book<span className="text-orange-600">.</span>
                         </h1>
                         <div id="profile" className="space-y-3">
                             <img
@@ -41,72 +42,85 @@ export default function Sidebar() {
                             />
                             <div>
                                 <h2
-                                    className="font-medium text-xs md:text-sm text-center text-teal-500"
+                                    className="font-medium text-xs md:text-sm text-center text-orange-500"
                                 >
                                     {localStorage.getItem("username")}
                                 </h2>
                                 <p className="text-xs text-gray-500 text-center">Administrator</p>
                             </div>
                         </div>
-                       
+
                         <div id="menu" className="flex flex-col space-y-2">
                             <Link
                                 to="/dashboard/home"
-                                className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:text-base rounded-md transition duration-150 ease-in-out"
+                                className=" text-sm font-medium text-gray-700 py-2 px-2 hover:bg-orange-500 hover:text-white hover:text-base rounded-md transition duration-150 ease-in-out"
                             >
-                                <FaClipboard
+                                <FaBook
                                     className="w-6 h-6 mr-2 fill-current inline-block"
-                                  
+
                                 >
-                                   
-                                </FaClipboard>
-                                <span className="">Dashboard</span>
+
+                                </FaBook>
+                                <span className="">Tarifleri Keşfet</span>
                             </Link>
+                      
                             <Link
-                                to="/dashboard/products"
-                                className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
+                                to="/dashboard/recipes"
+                                className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-orange-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
                             >
                                 <FaShoppingBasket
                                     className="w-6 h-6 mr-2 fill-current inline-block"
-                                 
+
                                 >
-                                  
+
                                 </FaShoppingBasket>
-                                <span className="">Products</span>
+                                <span className="">Tariflerim</span>
                             </Link>
                             <Link
                                 to="/dashboard/users"
-                                className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
+                                className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-orange-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
                             >
                                 <FaUsers
                                     className="w-6 h-6 mr-2 fill-current inline-block"
-                                
+
                                 >
-                              
+
                                 </FaUsers>
-                                <span className="">Users</span>
+                                <span className="">Favorilerim</span>
                             </Link>
 
                             <Link
                                 to="/dashboard/settings"
-                                className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
+                                className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-orange-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
                             >
                                 <FaCog
                                     className="w-6 h-6 mr-2 fill-current inline-block"
-                                
-                                 />
-                                    
-                                <span className="">Settings</span>
+
+                                />
+
+                                <span className="">Ayarlar</span>
                             </Link>
-                       
-                        
-                         
-                           
-                         
+
+                            <Link
+                                to="/login"
+                                className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-red-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
+                            >
+                                <FaTimes
+                                    className="w-6 h-6 mr-2 fill-current inline-block"
+
+                                />
+
+                                <span className="">Çıkış Yap</span>
+                            </Link>
+
+
+
+
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-            )
+    )
 }
