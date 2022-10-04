@@ -8,11 +8,13 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Products from './pages/Recipes'
 import Notfound from "./pages/Page404"
-import Users from './pages/Users';
+import Users from './pages/Favs';
 import Home from './pages/Home';
 import ForgetPassword from './pages/ForgetPassword';
 import Landing from './pages/Landing';
 import Recipes from './pages/Recipes';
+import Profile from './pages/Profile';
+import Favs from './pages/Favs';
  
 const ProtectedRoute = () => {
   const user = useSelector((state)=> state.auth.user)
@@ -30,10 +32,9 @@ export default function Router(){
             element: <ProtectedRoute />,
             children: [
                 {path: "recipes", element: <Recipes />},
-                {path: "users", element: <Users />},
+                {path: "favs", element: <Favs />},
                 {path: "home", element: <Home />},
-                
-
+                {path: "me", element: <Profile />},
 
 
             ]

@@ -26,9 +26,10 @@ export default function Recipes() {
 
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
-    <div>
+    <div className=' font-Archivo'>
 
-      <h2 className='mt-3 pb-5 text-2xl'>Ürün Listeleri</h2>
+      <h2 className='mt-5 text-2xl'>Tariflerim</h2>
+      <p className='pb-5 text-sm font-thin text-gray-500'>Yayınladığınız Tarifler Burada Gözükür</p>
 
 
       <Button colorScheme="green" onClick={onOpen}>Yeni Ekle</Button>
@@ -36,7 +37,7 @@ export default function Recipes() {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Yeni Ürün Ekle</ModalHeader>
+          <ModalHeader>Yeni Tarif Ekle</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             Merhaba,
@@ -54,50 +55,7 @@ export default function Recipes() {
       </Modal>
 
 
-      <TableContainer mt={4} bgColor="gray.50">
-        <Table size='md'>
-          <Thead>
-            <Tr>
-              <Th>Ürün Adı</Th>
-              <Th>Stok Durumu</Th>
-              <Th>Fiyatı</Th>
-              <Th>Kategori</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            <Tr>
-              <Td>Açıklama</Td>
-              <Td>millimetres (mm)</Td>
-              <Td >25.4</Td>
-              <Td >Züccaciye</Td>
-
-            </Tr>
-            <Tr>
-              <Td>feet</Td>
-              <Td>centimetres (cm)</Td>
-              <Td >30.48</Td>
-              <Td >Oyuncak</Td>
-
-            </Tr>
-            <Tr>
-              <Td>yards</Td>
-              <Td>metres (m)</Td>
-              <Td >0.91444</Td>
-              <Td >Giyim</Td>
-
-            </Tr>
-            
-          </Tbody>
-          <Tfoot>
-            <Tr>
-              <Th>To convert</Th>
-              <Th>into</Th>
-              <Th >multiply by</Th>
-            </Tr>
-          </Tfoot>
-        </Table>
-      </TableContainer>
-
+   
 
 
 

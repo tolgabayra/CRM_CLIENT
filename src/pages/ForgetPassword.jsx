@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom'
 export default function ForgetPassword() {
     return (
         <div>
-            <div className="flex items-center min-h-screen p-4 bg-gray-100 lg:justify-center">
+            <div className="flex items-center min-h-screen p-4 bg-gray-100 lg:justify-center font-Archivo">
                 <div
                     className="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md"
                 >
                     <div
-                        className="p-4 py-6 text-white bg-indigo-500 md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly"
+                        className="p-4 py-6 text-white bg-purple-500 md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly"
                     >
                         <div className="my-3 text-4xl font-bold tracking-wider text-center">
                             <a href="#">Bayrak Panel</a>
@@ -32,7 +32,7 @@ export default function ForgetPassword() {
                             <div className="flex flex-col space-y-1">
                                 <div className="flex justify-end">
                                     <Link to="/login"
-                                        className="text-sm text-indigo-600 hover:underline focus:text-indigo-800">Login page</Link>
+                                        className="text-sm text-purple-600 hover:underline focus:text-purple-800">Login page</Link>
                                 </div>
 
                             </div>
@@ -40,7 +40,7 @@ export default function ForgetPassword() {
                             <div>
                                 <button
                                     type="submit"
-                                    className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-indigo-500 rounded-md shadow hover:bg-indigo-600 focus:outline-none focus:ring-indigo-200 focus:ring-4"
+                                    className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-purple-500 rounded-md shadow hover:bg-purple-600 focus:outline-none focus:ring-purple-200 focus:ring-4"
                                 >
                                     Reset Password
                                 </button>

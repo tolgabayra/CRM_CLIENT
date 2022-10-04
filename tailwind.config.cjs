@@ -5,7 +5,12 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Archivo: ["Archivo", "sansa-serif"],
+        Peralta: ["Peralta", "cursive"]
+       },
+    },
   },
   plugins: [],
 }

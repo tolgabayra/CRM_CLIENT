@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom'
 
 export default function Landing() {
     return (
-        <div>
+        <div className=' font-Archivo'>
 
             <section className="w-full px-8 text-gray-700 bg-white">
                 <div className="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl">
                     <div className="relative flex flex-col md:flex-row">
                         <a href="#_" className="flex items-center mb-5 font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0">
-                            <span className="mx-auto text-xl font-black leading-none text-gray-900 select-none">Fit Book<span className="text-orange-600">.</span></span>
+                            <span className="mx-auto text-xl font-black leading-none text-gray-900 select-none">Fit Book<span className="text-purple-600">.</span></span>
                         </a>
                         <nav className="flex flex-wrap items-center mb-5 text-base md:mb-0 md:pl-8 md:ml-8 md:border-l md:border-gray-200">
                             <a href="#_" className="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900">Anasayfa</a>
@@ -24,7 +24,7 @@ export default function Landing() {
                         <Link to="/login" className="text-base font-medium leading-6 text-gray-600 whitespace-no-wrap transition duration-150 ease-in-out hover:text-gray-900">
                             Giriş Yap
                         </Link>
-                        <Link to="/register" className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-orange-600 border border-transparent rounded-md shadow-sm hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600">
+                        <Link to="/register" className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-purple-600 border border-transparent rounded-md shadow-sm hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-600">
                             Kayıt Ol
                         </Link>
                     </div>
@@ -37,8 +37,8 @@ export default function Landing() {
                         <div className="w-full md:w-1/2 md:px-3">
                             <div className="w-full pb-6 space-y-6 sm:max-w-md lg:max-w-lg md:space-y-4 lg:space-y-8 xl:space-y-9 sm:pr-5 lg:pr-0 md:pb-0">
                                 <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl">
-                                    <span className="block xl:inline">Fitbook ile tariflerin </span>
-                                    <span className="block text-orange-600 xl:inline">
+                                    <span className="block xl:inline">Fitbook ile tariflerin  </span>
+                                    <span className="block text-purple-600 xl:inline">
                                         En güzel ve en doğru yeri
                                     </span>
                                 </h1>
@@ -46,7 +46,7 @@ export default function Landing() {
                                     Ücretsiz bir şekilde hesap oluşturup, kendi yaptığın tarifleri paylaşabileceğin ve bunlardan geri dönüş alabiliceğin bir platformdur
                                 </p>
                                 <div className="relative flex flex-col sm:flex-row sm:space-x-4">
-                                    <a href="#_" className="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-orange-600 rounded-md sm:mb-0 hover:bg-orange-700 sm:w-auto">
+                                    <a href="#_" className="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-purple-600 rounded-md sm:mb-0 hover:bg-purple-700 sm:w-auto">
                                         Ücretsiz Kayıt Olun
                                         <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                                     </a>
@@ -81,13 +81,13 @@ export default function Landing() {
                         </p>
                         <ul className="p-0 m-0 leading-6 border-0 border-gray-300">
                             <li className="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                                <span className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-orange-300 rounded-full"><span className="text-sm font-bold">✓</span></span> Maximize productivity and growth
+                                <span className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-purple-300 rounded-full"><span className="text-sm font-bold">✓</span></span> Maximize productivity and growth
                             </li>
                             <li className="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                                <span className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-orange-300 rounded-full"><span className="text-sm font-bold">✓</span></span> Speed past your competition
+                                <span className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-purple-300 rounded-full"><span className="text-sm font-bold">✓</span></span> Speed past your competition
                             </li>
                             <li className="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                                <span className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-orange-300 rounded-full"><span className="text-sm font-bold">✓</span></span> Learn the top techniques
+                                <span className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-purple-300 rounded-full"><span className="text-sm font-bold">✓</span></span> Learn the top techniques
                             </li>
                         </ul>
                     </div>
@@ -103,13 +103,13 @@ export default function Landing() {
                         </p>
                         <ul className="p-0 m-0 leading-6 border-0 border-gray-300">
                             <li className="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                                <span className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-orange-300 rounded-full"><span className="text-sm font-bold">✓</span></span> Automated task management workflow
+                                <span className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-purple-300 rounded-full"><span className="text-sm font-bold">✓</span></span> Automated task management workflow
                             </li>
                             <li className="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                                <span className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-orange-300 rounded-full"><span className="text-sm font-bold">✓</span></span> Detailed analytics for your data
+                                <span className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-purple-300 rounded-full"><span className="text-sm font-bold">✓</span></span> Detailed analytics for your data
                             </li>
                             <li className="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                                <span className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-orange-300 rounded-full"><span className="text-sm font-bold">✓</span></span> Some awesome integrations
+                                <span className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-purple-300 rounded-full"><span className="text-sm font-bold">✓</span></span> Some awesome integrations
                             </li>
                         </ul>
                     </div>
@@ -133,7 +133,7 @@ export default function Landing() {
                                         <span className="font-medium text-gray-500">Faster Processing and Delivery</span>
                                     </li>
                                     <li className="flex items-center py-2 space-x-4 xl:py-3">
-                                        <svg className="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                                        <svg className="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
                                         <span className="font-medium text-gray-500">Out of the Box Tracking and Monitoring</span>
                                     </li>
                                     <li className="flex items-center py-2 space-x-4 xl:py-3">
