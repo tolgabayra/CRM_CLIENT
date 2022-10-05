@@ -32,8 +32,8 @@ export default function Login() {
     .then((res) => {
       console.log(res);
       toast({
-        title: 'Login is successfull.',
-        description: "You are redirected to the dashboard page",
+        title: 'Giriş Başarılı.',
+        description: "Yönlendiriliyorsunuz....",
         status: 'success',
         position: "top-right",
         duration: 2000,
@@ -53,8 +53,8 @@ export default function Login() {
     .catch(err=>{
       console.log(err);
       toast({
-        title: 'Login Failed.',
-        description: "Check your email and password",
+        title: 'Giriş İşlemi Başarısız.',
+        description: "Epostanızı ve parolanızı kontrol ediniz",
         status: 'error',
         position: "top-right",
         duration: 2000,

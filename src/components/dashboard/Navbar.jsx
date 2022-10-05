@@ -16,8 +16,8 @@ export default function Navbar() {
       .then(() => {
         localStorage.clear()
         toast({
-            title: 'Logout is successfull.',
-            description: "You are redirected to the login page",
+            title: 'Çıkış İşlemi Başarılı.',
+            description: "Giriş Ekranına Yönlendiriliyorsunuz",
             status: 'success',
             position: "top-right",
             duration: 2000,
@@ -35,7 +35,7 @@ export default function Navbar() {
 
     return (
         <div>
-            <header className="fixed right-0 top-0 left-60 bg-purple-100 py-3 px-8 h-16 font-Archivo mr-4">
+            <header className="fixed right-0 top-0 left-40 bg-purple-50 py-3 px-10 h-16 font-Archivo ml-4 mr-4">
                 <nav className=" flex flex-col lg:flex-row lg:items-center flex-shrink-0">
                     <div className="flex justify-between items-center lg:mr-32">
                         <span className="text-dark text-xl"></span>
@@ -47,13 +47,13 @@ export default function Navbar() {
                         <ul className="flex flex-col mt-3 mb-1 lg:flex-row lg:mx-auto lg:mt-0 lg:mb-0">
 
                         </ul>
-                        <div className="flex my-3 lg:my-0">
+                        <div className="flex">
                             <Popover>
                                 <PopoverTrigger>
                                     <Avatar name='' h={10} w={10} className='cursor-pointer' src='https://bit.ly/tioluwani-kolawole' />
                                 </PopoverTrigger>
                                 <Portal>
-                                    <PopoverContent>
+                                    <PopoverContent mr={12} ml={12}>
                                         <PopoverArrow />
                                         <PopoverCloseButton />
                                         <PopoverBody>

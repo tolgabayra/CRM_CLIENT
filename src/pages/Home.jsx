@@ -2,6 +2,8 @@ import { Badge, Button, Stack } from '@chakra-ui/react'
 import React from 'react'
 import Recipe from '../components/dashboard/Recipe'
 import { FaThList } from 'react-icons/fa'
+
+
 export default function Home() {
   return (
     <div className=' font-Archivo'>
@@ -32,13 +34,16 @@ export default function Home() {
         <Recipe />
 
         <Recipe />
+
         <Recipe />
+
         <Recipe />
         <Recipe />
         <Recipe />
         <Recipe />
         <Recipe />
 
+   
       </div>
     </div>
   )

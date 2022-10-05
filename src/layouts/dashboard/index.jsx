@@ -10,20 +10,18 @@ export default function Index() {
   
     <Navbar />
 
-    <aside className="fixed inset-y-0 left-0 bg-white shadow-md max-h-screen w-60">
+    <aside className="fixed bg-white shadow-md max-h-screen w-30">
       <Sidebar />
     </aside>
   
-    <main className="ml-60 pt-6 max-h-screen overflow-auto">
+    <main className="ml-48 pt-6 max-h-screen overflow-auto">
       <div className="px-6 py-8">
         <div className="w-full mx-auto">
-          <div className="bg-white rounded-3xl p-1 mb-5">
             
   
         
             <Outlet/>
 
-          </div>
         </div>
       </div>
     </main>
